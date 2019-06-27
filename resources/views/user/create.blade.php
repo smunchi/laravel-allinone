@@ -14,6 +14,7 @@
         @endif
         <div class="row">
             <form method="post" action="{{ url('/create/ticket') }}">
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="title">Ticket Title</label>
                     <input type="text" name="title" class="form-control"/>

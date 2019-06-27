@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Ticket;
-use Illuminate\Http\Request;
+use App\Jobs\CreateTicket;
+use App\Http\Requests\CreateTicketRequest;
 
 class TicketController extends Controller
 {
@@ -12,14 +12,15 @@ class TicketController extends Controller
         return view('user.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateTicketRequest $request)
     {
-        $ticket = new Ticket();
-
         $data = $this->validate($request, [
             'title' => 'required',
             'description' => 'required'
         ]);
 
+        CreateTicket::dispatch($data, Auth()->user()->id)->onQueue('user_'.Auth()->user()->id);
+
+        return redirect('/home')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
     }
 }

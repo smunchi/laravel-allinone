@@ -19,5 +19,18 @@
             </div>
         </div>
     </div>
+    <br/>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Ticket</div>
+
+                <div class="card-body">
+                    <a href="{{ url('/create/ticket') }}" class="btn btn-success">Create ticket</a>&nbsp;&nbsp;&nbsp;
+                    <a href="{{ url('/tickets') }}" class="btn btn-primary">Tickets</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
