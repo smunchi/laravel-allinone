@@ -4,14 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Jobs\CreateTicket;
 use App\Http\Requests\CreateTicketRequest;
+
+use App\Repository\TicketRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class TicketController extends Controller
 {
+    private $ticketRepository;
+
+    public function __construct(TicketRepository $ticketRepository)
+    {
+        $this->ticketRepository = $ticketRepository;
+    }
+
     public function create()
     {
         return view('user.create');
+    }
+
+    public function index()
+    {
+        $tickets = $this->ticketRepository->getAll();
+
+        return view('user.index', ['tickets' => $tickets]);
     }
 
     public function store(CreateTicketRequest $request)
