@@ -14,7 +14,8 @@
         "laravel/horizon": "^3.2",
         "laravel/tinker": "^1.0",
         "nesbot/carbon": "^1.26.3",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "smunchi/simplehttp": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

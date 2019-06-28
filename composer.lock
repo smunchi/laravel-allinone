@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d13f17587c77b68f23e010f2862bd00f",
+    "content-hash": "e4e1c8e527a70df27ac92c740db264fd",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2282,6 +2282,61 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "smunchi/simplehttp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smunchi/simplehttp.git",
+                "reference": "0bee36f403af37fa7f8f6a5a1c64906963a4b791"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smunchi/simplehttp/zipball/0bee36f403af37fa7f8f6a5a1c64906963a4b791",
+                "reference": "0bee36f403af37fa7f8f6a5a1c64906963a4b791",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Smunchi\\SimpleHttp\\SimpleHttpServiceProvider"
+                    ],
+                    "aliases": {
+                        "Http": "Smunchi\\SimpleHttp\\Facades\\Http"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Smunchi\\SimpleHttp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Salahuddin Munchi",
+                    "email": "salah_cse_mbstu@yahoo.com"
+                }
+            ],
+            "description": "An easier Http client for laravel",
+            "keywords": [
+                "Guzzle",
+                "http",
+                "laravel"
+            ],
+            "time": "2019-06-28T13:18:20+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5587,7 +5642,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "smunchi/simplehttp": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
