@@ -23,7 +23,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Ticket</div>
+                <div class="card-header">{{ __('Ticket') }}</div>
 
                 <div class="card-body">
                     <a href="{{ url('/create/ticket') }}" class="btn btn-success">Create ticket</a>&nbsp;&nbsp;&nbsp;
