@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('welcome/{locale}', 'LanguageController@setLocale')->name('set-locale');
+Route::get('welcome/{locale}', 'LanguageController@setLocale')->name('language.locale');
 
 Auth::routes();
 
@@ -23,3 +23,7 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::get('create/ticket', 'TicketController@create');
 Route::post('create/ticket', 'TicketController@store');
 Route::get('tickets', 'TicketController@index');
+
+Route::prefix('admins')->group(function () {
+    Route::get('', 'Admin\HomeController@home')->name('admin.home');
+});
